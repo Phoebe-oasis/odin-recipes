@@ -1,0 +1,13 @@
+div {
+    color:whitesmoke;
+    background-color:black;
+}
+
+div a {
+    color: aqua;
+}
+
+div a:hover {
+    background-color:aliceblue;
+    color:blueviolet;
+}
