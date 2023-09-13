@@ -1,0 +1,161 @@
+/* font and color */
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+header,
+footer,
+.banner
+{
+    background-color: #1F2937;
+}
+header .logo{
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+header .header-links a,
+.text{
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+main .banner-title{
+font-size: 48px;
+font-weight: bold;
+color: #F9FAF8;
+}
+
+button{
+    background-color: #3882F6;
+    color: white;
+}
+
+.info .info-title{
+    font-size: 36px;
+    font-weight: bold;
+    color:#1F2937;
+}
+.info-cards .card .image{
+    width: 150px;
+    height: 150px;
+    border: 3px solid #3882F6;
+    border-radius: 8px;
+}
+.quote{
+    background-color: #e5e7eb;
+    font-size: 36px;
+    font-style: italic;
+    color: #1F2937;
+}
+.ads-box{
+    background-color: #3882F6;
+}
+
+
+
+/* layout */
+body{
+    display: flex;
+    flex-direction:column;
+}
+.header{
+    display: flex;
+    margin: 16px 300px;
+    justify-content: space-between;
+}
+
+header .header-links{
+    display: flex;
+
+}
+main .banner{
+    padding: 60px 0 80px;
+}
+main .banner-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 300px;
+    gap: 20px;
+}
+main .banner-left{
+    flex: 0 0 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-right{
+    width: 600px;
+    height: 250px;
+    background-color: #b0b7c4;
+    text-align: center;
+    line-height: 250px;
+}
+
+button{
+    padding: 8px;
+    border-style: none;
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-title{
+    padding: 40px 0;
+}
+.info .info-cards{
+    display: flex;
+    margin: 0 300px;
+    gap: 20px;
+    padding-bottom: 100px;
+}
+
+.card-text{
+    width: 150px;
+    text-align: center;
+}
+.quote{
+    padding: 100px 0;
+}
+.quote-text{
+    margin: 0 300px;
+}
+.quote-text p:last-child{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1F2937;
+    text-align: right;
+}
+.ads{
+    padding: 80px;
+}
+.ads-box{
+    padding: 50px 100px;
+    border-radius: 5px;
+    margin: 0 220px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ads-box button{
+    border: 1px solid white;
+}
+.ads-box .text p:first-child{
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+    padding: 20px 0;
+}
