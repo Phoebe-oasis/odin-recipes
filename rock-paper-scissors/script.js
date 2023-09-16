@@ -12,7 +12,7 @@ function getComputerChoice(){
 
 function singlePlayRound(playerSelection, computerSelection){
     let p = playerSelection.toLowerCase();
-    let c = computerSelection;
+    let c = getComputerChoice();
 
     if(p === 'rock'){
         switch(c){
@@ -41,15 +41,23 @@ function singlePlayRound(playerSelection, computerSelection){
 
 };
 
-function game(){
-    let user = prompt("Please enter your choice: ");
-    let computer;
-    let result;
-    for(let i = 0; i < 5; i++){
-        computer = getComputerChoice();
-        result = singlePlayRound(user, computer);
-        alert(result);
-    }
-}
+// function game(){
+//     let user = prompt("Please enter your choice: ");
+//     let computer;
+//     let result;
+//     for(let i = 0; i < 5; i++){
+//         computer = getComputerChoice();
+//         result = singlePlayRound(user, computer);
+//         alert(result);
+//     }
+// }
 
-game();
+// game();
+
+const btns = document.querySelector(".buttons");
+// console.log(btns)
+btns.addEventListener('click', function(e){
+    // console.log(e.target.getAttribute('class'));
+    alert(singlePlayRound(e.target.getAttribute("class"),));
+    
+},true);
