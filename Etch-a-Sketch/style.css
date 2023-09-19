@@ -1,0 +1,47 @@
+/* .div:hover{
+    background-color: red;
+} */
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: gray;
+}
+.plate{
+    border:1px solid black;
+    background-color : white;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    width: 260px;
+    padding: 20px;
+    margin: 10px;
+    font-size: 20px;
+
+}
+
+#colorhide{
+    /* display: none; */
+    visibility: hidden;
+    width: 60px;
+    height: 40px;
+    margin: -50px;
+    margin-bottom: -10px;
+
+    align-self: flex-end;
+}
+
+.active{
+    border: 5px solid yellow;
+}
