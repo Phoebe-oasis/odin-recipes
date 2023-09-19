@@ -2,6 +2,11 @@
     background-color: red;
 } */
 
+*{
+    padding: 0;
+    margin: 0;
+}
+
 body{
     display: flex;
     align-items: center;
@@ -23,12 +28,22 @@ body{
     flex-direction: column;
 }
 
-button{
+button
+{
     width: 260px;
     padding: 20px;
     margin: 10px;
     font-size: 20px;
 
+}
+
+.size{
+    margin: 10px;
+} 
+
+.sizeLabel {
+    font-size: 20px;
+    margin: 20px;
 }
 
 #colorhide{
@@ -45,3 +60,4 @@ button{
 .active{
     border: 5px solid yellow;
 }
+

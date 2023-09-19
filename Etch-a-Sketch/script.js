@@ -7,16 +7,18 @@ let mouseDown = false;
 
 const plate = document.querySelector('.plate');
 const btns = document.querySelectorAll('button');
-
+const sizeBtn = document.querySelector('.size');
+const sizeLabel = document.querySelector('.sizeLabel');
 
 function initializePlate(size){
-    const sizeBtn = document.querySelector('.size');
+    
     const clearBtn = document.querySelector('.clear');
     const colorBtn = document.querySelector('.color');
     const rainbowBtn = document.querySelector('.rainbow');
     const valueBtn = document.querySelector('.value');
 
-    sizeBtn.addEventListener('click',changePlateSize);
+    sizeLabel.innerHTML = `Change Size: ${size} * ${size}`;
+    sizeBtn.addEventListener('input',changePlateSize);
     clearBtn.addEventListener('click', reloadPlate);
     colorBtn.addEventListener('click', changePainterColor);
     rainbowBtn.addEventListener('click', changeRainbowMode);
@@ -28,6 +30,7 @@ function initializePlate(size){
     plate.addEventListener('mouseover',changeGridColor);
 
     if(size >=0 && size <= 100){
+        sizeBtn.value = size;
         for(let i = 0; i < size; i++){
             for(let j = 0; j < size;j++){
                 const grid = document.createElement('div');
@@ -79,7 +82,7 @@ function changeGridColor(e){
     }
 }
 function changePlateSize(){
-    currentSize = +prompt('Please enter the number of squares per side for the new grid: (1~100)');
+    currentSize = sizeBtn.value;
     clearUpPlate();
     initializePlate(currentSize);
 }
