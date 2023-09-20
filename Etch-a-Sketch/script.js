@@ -57,6 +57,8 @@ function clearUpPlate(){
 }
 
 function changeGridColor(e){
+    // fix mouse default event !!!!!!!!!!!!
+    e.preventDefault();
     if(e.target !== plate){
         if(e.type === 'mouseover' && !mouseDown) return;
 
