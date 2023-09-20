@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cn">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM practice</title>
+    </head>
+    <body>
+        <h1>
+        THE TITLE OF YOUR WEBPAGE
+        </h1>
+        <div id="container"></div>
+        <button></button>
+
+        <script>
+            const container = document.querySelector('#container');
+
+            const red = document.createElement('p');
+            red.innerText = "Hey i'm red!";
+            red.style.color = 'red';
+            container.appendChild(red);
+
+            const blue = document.createElement('h3');
+            blue.innerText = "i'm a blue h3!";
+            blue.style.color = 'blue';
+            container.appendChild(blue);
+
+            const div = document.createElement('div');
+            container.appendChild(div);
+
+            const h1 = document.createElement("h1");
+            h1.innerText = "i'm in a div";
+            div.appendChild(h1);
+
+            const p = document.createElement('p');
+            p.innerText = "ME TOO!";
+            div.appendChild(p);
+
+            const btn = document.querySelector('button');
+            btn.innerText = 'click me';
+            btn.addEventListener('click',function(e){
+                console.log(e);
+                console.log(e.target);
+                e.target.style.background = 'lightblue';
+
+            })
+
+
+        </script>
+    </body>
+
+</html>
