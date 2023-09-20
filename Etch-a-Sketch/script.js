@@ -1,5 +1,5 @@
 const DEFAULT_SIZE = 16;
-const DEFAULT_COLOR = `rgb(192, 145, 145)`;
+const DEFAULT_COLOR = 'rgb(192, 145, 145)';
 
 let currentSize = DEFAULT_SIZE;
 let currentColor = DEFAULT_COLOR;
@@ -62,7 +62,6 @@ function changeGridColor(e){
 
         for(let i = 0; i < btns.length; i++){
             if(btns[i].className.match('active')){
-
                 if(btns[i].className.match('color')){
 
                 }else if(btns[i].className.match('rainbow')){
@@ -71,9 +70,16 @@ function changeGridColor(e){
                     let B = Math.floor(Math.random() * 255);
                     currentColor = `rgb(${R}, ${G}, ${B})`;
 
-                }else{
-                    let HSL = RGBtoHSL(currentColor);
-                    let newHSL;
+                }else if(btns[i].className.match('value')){
+                    // console.log(currentColor)
+                    let HSL = HEXtoRGBtoHSL(currentColor);
+                    // console.log(HSL);
+                    let newHSL = (HSL[2] <= 0.9) ? 
+                                [parseInt(HSL[0]), +HSL[1].toFixed(2), +(HSL[2]+0.1).toFixed(2)]: 
+                                [parseInt(HSL[0]), +HSL[1].toFixed(2), +HSL[2].toFixed(2)];
+                    // console.log(newHSL);
+                    currentColor = `hsl(${newHSL[0]}, ${parseInt(newHSL[1]*100)}%, ${parseInt(newHSL[2]*100)}%)`;
+                    // console.log(currentColor);
                 }
             }
         }
@@ -114,6 +120,54 @@ function changeRainbowMode(e){
     if(!e.target.className.match('active')){
         e.target.classList.add('active');
     }
+}
+
+function HEXtoRGBtoHSL(str){
+    let R, G, B;
+    let H, S, L;
+    if(!str.match('hsl')){
+        //HEX to RGB
+        if(!str.match('rgb')){
+            // console.log(str.substr(1,2),str.substr(3,2),str.substr(5,2))
+            R = parseInt(str.substr(1,2), 16);
+            G = parseInt(str.substr(3,2), 16);
+            B = parseInt(str.substr(5,2), 16);
+            // console.log(R)
+
+        }else{
+            R = +str.match(/\d+/g)[0];
+            G = +str.match(/\d+/g)[1];
+            B = +str.match(/\d+/g)[2];
+            // console.log(R,G,B)
+        }
+        //RGB to HSL
+        R /= 255;
+        G /= 255;
+        B /= 255;
+        let Cmax = Math.max(R, G, B);
+        let Cmin = Math.min(R, G ,B);
+        L = (Cmax + Cmin) / 2;
+        if(Cmax === Cmin){
+            H = S = 0;
+        }else{
+            let delta = Cmax - Cmin;
+            S = L > 0.5 ? delta / (2 - Cmax - Cmin) : delta / (Cmax + Cmin);
+            switch(Cmax){
+                case R: H = (G - B) / delta % 6; break;
+                case G: H = (B - R) / delta + 2; break;
+                case B: H = (R - G) / delta + 4; break;
+            }
+            H = H * 180 / Math.PI;
+        }
+
+    }else{
+        // HSL string to HSL number 
+        H = +str.match(/\d+/g)[0];
+        S = +str.match(/\d+/g)[1] / 100;
+        L = +str.match(/\d+/g)[2] / 100;
+
+    }
+    return [H, S, L];
 }
 
 function changePainterValue(e){
