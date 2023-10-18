@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    width: 300px;
+    height: 500px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(236, 238, 237, 0.55);
+    box-shadow: 1px 1px 10px 1px rgba(198, 198, 198, 0.55);
+}
+h2{
+    padding: 20px;
+    align-self: flex-start;
+}
+.wrapper  .display{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    /* gap: 20px; */
+    width: 280px;
+    height: 150px;
+
+}
+.display .expression{
+    color: gray;
+    height: 20px;
+    /* border: 1px solid black; */
+    /* 注意这里的文字方向，不要用direction:rtl;过于给自己找麻烦 */
+    text-align: right;
+    flex: 1 0 0;
+}
+.display .nums{
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+    text-wrap:wrap;
+    flex: 2 0 auto;
+}
+
+.wrapper .keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    cursor: default;
+}
+.keyboard .keyrow{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+.keyboard .key{
+    border: 1px solid rgb(213, 213, 213);
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    width: 20px;
+    flex: 0 0 auto;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 0.5px 1px  rgb(213, 213, 213);
+}
+
+.keyboard .key:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+button{
+    padding: 10px 20px;
+}
