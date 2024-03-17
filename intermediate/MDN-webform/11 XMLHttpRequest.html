@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>click me</button>
+    <script>
+      const btn = document.querySelector("button");
+
+      function sendData(data) {
+        console.log("Sending data");
+
+        const XHR = new XMLHttpRequest(); //新建一个XHRHttp请求对象
+
+        const urlEncodedDataPairs = []; // 用URL编码好的数据放这个数组里
+
+        // Turn the data object into an array of URL-encoded key/value pairs.
+        for (const [name, value] of Object.entries(data)) {
+          urlEncodedDataPairs.push(
+            `${encodeURIComponent(name)}=${encodeURIComponent(value)}`
+          );
+        }
+
+        // Combine the pairs into a single string and replace all %-encoded spaces to
+        // the '+' character; matches the behavior of browser form submissions.
+        const urlEncodedData = urlEncodedDataPairs
+          .join("&")
+          .replace(/%20/g, "+");
+
+        // Define what happens on successful data submission
+        XHR.addEventListener("load", (event) => {
+          alert("Yeah! Data sent and response loaded.");
+        });
+
+        // Define what happens in case of error
+        XHR.addEventListener("error", (event) => {
+          alert("Oops! Something went wrong.");
+        });
+
+        // Set up our request
+        XHR.open("POST", "https://www.baidu.com");
+
+        // Add the required HTTP header for form data POST requests
+        XHR.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+
+        // Finally, send our data.
+        XHR.send(urlEncodedData);
+      }
+
+      btn.addEventListener("click", () => {
+        sendData({ test: "ok" });
+      });
+    </script>
+  </body>
+</html>

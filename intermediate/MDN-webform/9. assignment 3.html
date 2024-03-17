@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form validation: Task 3</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      #mail {
+        appearance: none;
+        font-family: inherit;
+        font-size: 100%;
+      }
+
+      input:valid {
+        border: #333;
+      }
+
+      input:invalid {
+        border: 2px dashed red;
+      }
+
+      .error {
+        display: block;
+        padding: 0;
+        font-size: 80%;
+        color: white;
+        background-color: red;
+        border-radius: 0 0 5px 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <label for="mail"
+        >I would like you to provide me with an e-mail address:</label
+      >
+      <input
+        type="email"
+        id="mail"
+        name="mail"
+        minlength="10"
+        pattern="[a-zA-Z0-9]+@[a-z]+.[a-z]+"
+        required
+      />
+      <button>Submit</button>
+    </form>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    const email = document.getElementById("mail");
+    const emailError = document.createElement("span");
+    email.parentElement.insertBefore(emailError, email);
+    emailError.className = "error";
+
+    email.addEventListener("input", () => {
+      if (email.validity.valid) {
+        emailError.textContent = "";
+        emailError.className = "error";
+      } else {
+        showError();
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      if (!email.validity.valid) {
+        showError();
+        event.preventDefault();
+      }
+    });
+
+    function showError() {
+      if (email.validity.valueMissing) {
+        emailError.textContent = "Please enter an email address.";
+      } else if (email.validity.typeMismatch) {
+        emailError.textContent = "Entered value should be an email address.";
+      } else if (email.validity.tooShort) {
+        emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+      }
+    }
+  </script>
+</html>

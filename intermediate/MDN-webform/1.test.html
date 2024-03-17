@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: azure;
+        }
+        .useFonts {
+            font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-family: 'Roboto', sans-serif;
+        }
+        .textStyle .fontStyle{
+            font-style: italic;
+        }
+        .textStyle .letterSpacing {
+            letter-spacing: 0.3em;
+        }
+        .textStyle .lineHeight{
+            line-height: 4em;
+            background-color: antiquewhite;
+        }
+        .textStyle .textTransform {
+            text-transform:capitalize;
+        }
+        .textStyle .textShadow {
+            text-shadow: 0 0.5em 1em #000;
+        }
+        .textStyle  .textOverflow {
+            background-color: aqua;
+            width: 20em;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .textStyle .borderRadius{
+            border: 1em solid red;
+            border-radius: 1em;
+        }
+        .textStyle .boxShadow {
+            box-shadow: 1px 3px 10px blue;
+        }
+        .textStyle .Overflow{
+            margin: 2px;
+            overflow: scroll;
+            width: 10em;
+        }
+        .textStyle .Opacity{
+            
+            opacity: 0.3;
+        }
+
+        .insideFieldset{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            border: none;
+            margin-bottom: 40px;
+        }
+        .insideFieldset legend{
+            margin-bottom: 15px;
+        }
+        .insideFieldset .radio-label{
+            font-size: 14px;
+            padding: 0 20px 0 10px;
+            color: aquamarine;
+        }
+        .insideFieldset input[type='radio']{
+            margin-top: 2px;
+        }
+        .insideFieldset select{
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+            color:rgb(198, 59, 59);
+        }
+        .insideFieldset textarea {
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            border: 1px solid #D6D9DC;
+            border-radius: 3px;
+          
+            min-height: 200px;
+            margin-bottom: 10px;
+            padding: 7px;
+            resize: none;
+            color: blue;
+          }
+
+          form {
+            /* Center the form on the page */
+            margin: 0 auto;
+            width: 400px;
+            /* Form outline */
+            padding: 1em;
+            border: 1px solid #ccc;
+            border-radius: 1em;
+          }
+          
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          
+          form li + li {
+            margin-top: 1em;
+          }
+          
+          label {
+            /* Uniform size & alignment */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+          }
+          
+          input,
+          textarea {
+            /* To make sure that all text fields have the same font settings
+               By default, textareas have a monospace font */
+            font: 1em sans-serif;
+          
+            /* Uniform text field size */
+            width: 300px;
+            box-sizing: border-box;
+          
+            /* Match form field borders */
+            border: 1px solid #999;
+          }
+          
+          input:focus,
+          textarea:focus {
+            /* Additional highlight for focused elements */
+            border-color: #000;
+          }
+          
+          textarea {
+            /* Align multiline text fields with their labels */
+            vertical-align: top;
+          
+            /* Provide space to type some text */
+            height: 5em;
+          }
+          
+          .button {
+            /* Align buttons with the text fields */
+            padding-left: 90px; /* same size as the label elements */
+          }
+          
+          button {
+            /* This extra margin represent roughly the same space as the space
+               between the labels and their text fields */
+            margin-left: 0.5em;
+          }
+    </style>
+</head>
+<body>
+    <div style="margin: 2px;">
+        <h2>
+            Fonts & Text styles
+        </h2>
+        <div class="useFonts">
+        试试字体 try the fonts Roboto
+        </div>
+        <div class="textStyle">
+            <span class="fontStyle">font style italic</span>
+            <p class="letterSpacing">letter spacing 0.3em</p>
+            <p class="lineHeight">line height 4em</p>
+            <p class="textTransform">text transform : capitalize</p>
+            <p class="textShadow">text shadow : 0 0.5em 1em #000</p>
+            <div class="textOverflow">text overflow : ellipsis. how to make it overflow??????????????????????????????</div>
+            <div class="borderRadius">border: 2em solid red </div>
+            <div class="boxShadow">box shadow : </div>
+            <div class="Overflow">overflow : scroll</div>
+            <div class="Opacity">opacity : 0.3</div>
+        </div>
+    </div>
+
+
+    <div>
+        <h2>
+            Form elements
+        </h2>
+        <label for="first_name">Your first name:</label>
+        <input type="text" id="first_name" placeholder="Phoebe is a cat." name="first_name">
+        <label for="user_email">Email Address:</label>
+        <input type="email" id="user_email" name="email" placeholder="you@example.com">
+        <label for="password">Password:</label>
+        <input type="password" id="user_password" name="password">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount">
+        <label for="DoB">Date of Birth:</label>
+        <input type="date" id="DoB" name="DoB">
+
+        <textarea rows="5" cols="10">
+            lalalalallallagdfdffdgdbzddgdgdfgsfgr24523534vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+        </textarea>
+
+        <form action="example.com/path" method="post">
+
+            
+            <select name="Car"> 
+                <option >Mercedes</option> 
+                <option value="tesla">Tesla</option> 
+                <option value="volvo" selected>Volvo</option> 
+                <option value="bmw">BMW</option> 
+                <option value="mini">Mini</option> 
+                <option value="ford">Ford</option> 
+            </select>
+            <select name="fashion"> 
+                <optgroup label="Clothing"> 
+                    <option value="t_shirt">T-Shirts</option> 
+                    <option value="sweater">Sweaters</option> 
+                    <option value="coats">Coats</option> 
+                </optgroup> <optgroup label="Foot Wear"> 
+                    <option value="sneakers">Sneakers</option> 
+                    <option value="boots">Boots</option> 
+                    <option value="sandals">Sandals</option> 
+                </optgroup> 
+            </select>
+
+            <h2>Ticket Type</h2> 
+            <div> 
+                <input type="radio" 
+                id="child" 
+                name="ticket_type" 
+                value="child"> 
+                <label for="child">Child</label> 
+            </div> 
+            <div> 
+                <input type="radio" 
+                id="adult" 
+                name="ticket_type" 
+                value="adult"
+                checked> 
+                <label for="adult">Adult</label> 
+            </div> 
+            <div> 
+                <input type="radio" 
+                id="senior" 
+                name="ticket_type" 
+                value="senior"> 
+                <label for="senior">Senior</label> 
+            </div>
+
+            <h2>Pizza Toppings</h2> 
+            <div> 
+                <input type="checkbox" 
+                id="sausage" 
+                name="topping" 
+                value="sausage"> 
+                <label for="sausage">Sausage</label> 
+            </div> 
+            <div> 
+                <input type="checkbox" 
+                id="onions" 
+                name="topping" 
+                value="onions"> 
+                <label for="onions">Onions</label> 
+            </div> 
+            <div> 
+                <input type="checkbox" 
+                id="pepperoni" 
+                name="topping" 
+                value="pepperoni"> 
+                <label for="pepperoni">Pepperoni</label> 
+            </div> 
+            <div> 
+                <input type="checkbox" 
+                id="mushrooms" 
+                name="topping" 
+                value="mushrooms"> 
+                <label for="mushrooms">Mushrooms</label> 
+            </div>
+
+            <h2>buttons</h2>
+            <button>click button</button>
+            <button type="submit">submit</button>
+            <button type="reset">reset</button>
+            <button type="button">a genetic button</button>
+
+            <h2>
+                Form - Fieldset
+            </h2>
+            <fieldset>
+                <label for="username">username:</label>
+                <input type="text" id="username" name="username">
+                <label for="useremail">useremail:</label>
+                <input type="email" id="useremail" name="useremail">
+            </fieldset>
+
+            <fieldset>
+                <legend>which animal?</legend>
+                <input type="radio"
+                id="rabbit"
+                name="animals"
+                value="rabbit">
+                <label for="rabbit">rabbit</label>
+                <input type="radio" 
+                name="animals" 
+                id="sneak">
+                <label for="sneak">sneak</label>
+                <input type="radio" 
+                name="animals" 
+                id="cat">
+                <label for="cat">cat</label>
+                <input type="radio" 
+                name="animals" 
+                id="lion">
+                <label for="lion">lion</label>
+            </fieldset>
+
+            <fieldset> 
+                <legend>Contact Details</legend> 
+                <label for="name">Name:</label> 
+                <input type="text" id="name" name="name"> 
+                <label for="phone_number">Phone Number:</label> 
+                <input type="tel" id="phone_number" name="phone_number"> 
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email"> 
+            </fieldset> 
+            
+            <fieldset> 
+                <legend>Delivery Details</legend> 
+                <label for="street_address">Street Address:</label> 
+                <input type="text" id="street_address" name="street_address"> 
+                <label for="city">City:</label> 
+                <input type="text" id="city" name="city"> 
+                <label for="zip_code">Zip Code:</label> 
+                <input type="text" id="zip_code" name="zip_code"> 
+            </fieldset>
+            
+        </form>
+
+        <form action="example.gom/path" method="post">
+            <h2>
+                MDN - first form -试试fieldset里面能不能用flexbox
+            </h2>
+
+            <fieldset class="insideFieldset">
+                <legend>
+                    CONTACT
+                </legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email">
+                
+               
+                <div>
+                    <label for="abstract">Message:</label>
+                    Select your favorite animal:
+                    <input type="radio" id="rabbit" name="radio" value="rabbit" >
+                    <label for="rabbit" class="radio-label">rabbit</label>
+                    <input type="radio" id="cat" name="radio" value="cat" >
+                    <label for="cat" class="radio-label">cat</label>
+                </div>
+                
+
+                <label for="fruits"></label>
+                <select id="fruits" name="fruits">
+                    <option value="apple">apple</option>
+                    <option value="pepper">pepper</option>
+                    <option value="strawberry">strawberry</option>
+                </select>
+                <button>SEND YOUR MESSAGE</button>
+
+            </fieldset>
+
+            <textarea id="abstract" name="abstract"></textarea>
+            <div class='insideFieldset'>
+                <label class='checkbox-label' for='available'>
+                <input id='available'
+                       name='available'
+                       type='checkbox'
+                       value='is-available'/>
+                <span>I’m actually available the date of the talk</span>
+                </label>
+            </div>
+            
+        </form>
+
+        <form action="example.com/path" method="post">
+            <ul>
+                <li>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="user_name">
+                </li>
+                <li>
+                    <label for="mail">E-mail:</label>
+                    <input type="email" id="mail" name="user-email">
+                </li>
+                <li>
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" name="user_message">default message</textarea>
+                </li>
+                <li class="button">
+                    <button type="submit">Send your message</button>
+                </li>
+                <li><input type="submit" class="button2"></li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
