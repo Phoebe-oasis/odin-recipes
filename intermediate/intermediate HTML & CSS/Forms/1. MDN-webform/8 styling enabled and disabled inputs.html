@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="text"]:disabled {
+        background: #eee;
+        border: 1px solid #ccc;
+      }
+
+      .disabled-label {
+        color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset id="shipping">
+        <legend>Shipping address</legend>
+        <div>
+          <label for="name1">Name: </label>
+          <input id="name1" name="name1" type="text" required />
+        </div>
+        <div>
+          <label for="address1">Address: </label>
+          <input id="address1" name="address1" type="text" required />
+        </div>
+        <div>
+          <label for="pcode1">Zip/postal code: </label>
+          <input id="pcode1" name="pcode1" type="text" required />
+        </div>
+      </fieldset>
+      <fieldset id="billing">
+        <legend>Billing address</legend>
+        <div>
+          <label for="billing-checkbox">Same as shipping address:</label>
+          <input type="checkbox" id="billing-checkbox" checked />
+        </div>
+        <div>
+          <label for="name" class="billing-label disabled-label">Name: </label>
+          <input id="name" name="name" type="text" disabled required />
+        </div>
+        <div>
+          <label for="address2" class="billing-label disabled-label">
+            Address:
+          </label>
+          <input id="address2" name="address2" type="text" disabled required />
+        </div>
+        <div>
+          <label for="pcode2" class="billing-label disabled-label">
+            Zip/postal code:
+          </label>
+          <input id="pcode2" name="pcode2" type="text" disabled required />
+        </div>
+      </fieldset>
+
+      <div><button>Submit</button></div>
+    </form>
+    <script>
+      // Wait for the page to finish loading
+      document.addEventListener(
+        "DOMContentLoaded",
+        () => {
+          // Attach `change` event listener to checkbox
+          document
+            .getElementById("billing-checkbox")
+            .addEventListener("change", toggleBilling);
+        },
+        false
+      );
+
+      function toggleBilling() {
+        // Select the billing text fields
+        // 用于选择文档中所有具有以下属性的元素：
+        // 1.具有 id 属性值为 "billing" 的父级元素。
+        // 2.该父级元素下的所有 <input> 子元素，且其 type 属性值为 "text"。
+        const billingItems = document.querySelectorAll(
+          '#billing input[type="text"]'
+        );
+        // Select the billing text labels
+        const billingLabels = document.querySelectorAll(".billing-label");
+
+        // Toggle the billing text fields and labels
+        for (let i = 0; i < billingItems.length; i++) {
+          billingItems[i].disabled = !billingItems[i].disabled;
+
+          if (
+            billingLabels[i].getAttribute("class") ===
+            "billing-label disabled-label"
+          ) {
+            billingLabels[i].setAttribute("class", "billing-label");
+          } else {
+            billingLabels[i].setAttribute(
+              "class",
+              "billing-label disabled-label"
+            );
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

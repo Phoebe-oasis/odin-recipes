@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button,
+      input,
+      select,
+      textarea {
+        display: block;
+        font-family: inherit;
+        font-size: 100%;
+
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      fieldset {
+        position: relative;
+        padding: 25px;
+      }
+      legend {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend>User info</legend>
+      <label for="username">Your name: </label>
+      <input type="text" id="username" name="username" />
+      <label for="favfood">Your favorite food: </label>
+      <select name="favfood" id="favfood">
+        <option value="fried fish">fried fish</option>
+        <option value="roast chiken">roast chiken</option>
+        <option value="sweet tomato">sweet tomato</option>
+      </select>
+      <label for="comment">Comment: </label>
+      <textarea id="comment" name="comment"></textarea>
+      <button>submit</button>
+    </fieldset>
+  </body>
+</html>

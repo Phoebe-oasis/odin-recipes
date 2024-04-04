@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="./sign-up.css" />
+  </head>
+
+  <body>
+    <div class="bookimage">
+      <img src="./book.jpg" alt="books stack on flowers" />
+      <div class="odinimage">
+        <span class="odinlogo">ODIN</span>
+        <div class="bgc"></div>
+      </div>
+    </div>
+    <div class="sign-up">
+      <form>
+        <div class="words">
+          <p>
+            You know you need something like this in your life to help you
+            realize your deepest dreams.
+          </p>
+          <p>Sign up now to get started.</p>
+        </div>
+        <div class="inputs">
+          <h3>Please sign up the form:</h3>
+          <div class="inputs_layout">
+            <div class="name">
+              <div class="formele">
+                <label for="firstname" class="firstname">FIRST NAME</label>
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  pattern="[a-zA-Z]{1, 50}"
+                  required
+                />
+              </div>
+              <div class="formele">
+                <label for="lastname" class="lastname">LAST NAME</label>
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  pattern="[a-zA-Z]{1, 50}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="number">
+              <div class="formele">
+                <label for="email" class="email">EMAIL</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="formele">
+                <label for="phone" class="phone">PHONE NUMBER</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="1[0-9]{10}"
+                  required
+                />
+              </div>
+            </div>
+            <div class="apwd">
+              <div class="formele">
+                <label for="pwd" class="pwd">PASSWORD</label>
+                <input
+                  type="password"
+                  id="pwd"
+                  name="pwd"
+                  pattern="[^$]{8}"
+                  required
+                />
+              </div>
+              <div class="formele">
+                <label for="cpwd" class="cpwd">CONFIRM PASSWORD</label>
+                <input
+                  type="password"
+                  id="cpwd"
+                  name="cpwd"
+                  pattern="[^$]{8}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="submit">
+          <input type="submit" value="Create Account" />
+          <div class="login">
+            Already have an account?
+            <a href="#">Log in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
