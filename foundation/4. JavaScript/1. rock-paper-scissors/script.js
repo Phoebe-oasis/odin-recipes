@@ -12,7 +12,7 @@ function getComputerChoice(){
 
 function singlePlayRound(playerSelection, computerSelection){
     let p = playerSelection.toLowerCase();
-    let c = getComputerChoice();
+    let c = computerSelection;
 
     if(p === 'rock'){
         switch(c){
@@ -58,6 +58,6 @@ const btns = document.querySelector(".buttons");
 // console.log(btns)
 btns.addEventListener('click', function(e){
     // console.log(e.target.getAttribute('class'));
-    alert(singlePlayRound(e.target.getAttribute("class"),));
+    alert(singlePlayRound(e.target.getAttribute("class"), getComputerChoice()));
     
 },true);
