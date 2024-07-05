@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+      }
+      div.parent {
+        top: 200px;
+        left: 300px;
+        width: 200px;
+        height: 200px;
+        position: relative;
+      }
+      div.sticky {
+        background-color: rgba(75, 69, 236, 0.836);
+        position: sticky;
+      }
+
+      .parent div:first-child {
+        position: absolute;
+        width: 30px;
+        height: 50px;
+        top: 50px;
+        left: 70px;
+      }
+      .parent div:last-child {
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- 搞不懂为什么这个框脱离整列的排列了…… -->
+    <div class="parent sticky">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="parent">
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
